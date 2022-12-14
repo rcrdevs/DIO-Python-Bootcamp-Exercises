@@ -1,7 +1,7 @@
 #%%
-qte = int(input())
+N = int(input())
 
-for i in range(qte):
+for i in range(N):
     A, B = list(map(str,input().split()))
     if A[-len(B):] == B:
         print("encaixa")
