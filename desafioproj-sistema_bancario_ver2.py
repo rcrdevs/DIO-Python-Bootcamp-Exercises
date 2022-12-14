@@ -1,4 +1,6 @@
 #%%
+###DEFS
+
 def Deposito(saldo, dep, extrato, /):
     if dep < 0:
         print('Operação não efetuada. Não aceitamos valores negativos.')
@@ -51,6 +53,8 @@ def Criar_Conta(cliente, num_conta):
     return conta_dic
 
 # %%
+###SYSTEM
+
 menu = """
 
 [u] Cadastro de Usuário(Cliente)
