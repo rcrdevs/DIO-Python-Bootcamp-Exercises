@@ -18,9 +18,9 @@ while True:
 
     if opcao == 'd':
         print("Depósito")
-        dep = float(input('Qual o valor que deseja depositar?: '))
+        dep = float(input('Digite o valor que deseja depositar: '))
         if dep < 0:
-            print('Operação não efetuada. Não aceitamos valores negativos.')
+            print('Operação não concluida. Valor negativo.')
         else:
             saldo += dep
             extrato += f'Depósito: R$ {dep:.2f}\n'
@@ -29,13 +29,13 @@ while True:
     elif opcao == 's':
         print("Saque")
         if numeros_saques < LIMITE_SAQUES:
-            saq = float(input('Qual o valor que deseja sacar?: '))
+            saq = float(input('Digite o valor que deseja sacar: '))
             if saq < 0:
-                print('Operação não efetuada. Não aceitamos valores negativos')
+                print('Operação não concluida. Valor negativo')
             elif saq > saldo:
-                print(f'Saldo insuficiente. Saldo atual é de R$ {saldo:.2f}.')
+                print(f'Saldo insuficiente. O seu saldo atual é de R$ {saldo:.2f}.')
             elif saq > 500:
-                print(f'Limite diário de saque ultrapassado. Digite um valor menor do que R$ {limite:.2f}.')
+                print(f'Limite diário de saques ultrapassado. Digite um valor menor do que R$ {limite:.2f}.')
             else:
                 saldo -= saq
                 numeros_saques += 1
@@ -43,7 +43,7 @@ while True:
                 print(f'Saque de R$ {saq:.2f} efetuado com sucesso.')
                 print(f'Você ainda pode efetuar {LIMITE_SAQUES - numeros_saques} saque(s).')
         else:
-            print(f'Operação não efetuada. Número total de saques atingiu o limite.')
+            print(f'Operação não efetuada. Número total de saques atingido.')
 
     elif opcao == 'e':
         print("==========Extrato==========")
@@ -55,4 +55,4 @@ while True:
         break
 
     else:
-        print("Opção incorreta, digite as opções do menu!!")
+        print("Opção incorreta, digite alguma das opções disponiveis no menu!!")
